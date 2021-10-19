@@ -36,7 +36,7 @@ maximum_community = 50
 maximum_degree = 50
 
 number_of_nodes = 5000
-b = 18 # 2**b registers
+b = 12 # 2**b registers
 seed = 0
 
 if number_of_nodes == 5000 and Wedges == True and Realisations == True:
@@ -114,10 +114,10 @@ for b in [b]:
 
     else:
         if undirected:
-            number_of_iterations, degree_list, edgeball_around_node, directed_edgeball_around_node, triangles_around_node, nodeball_around_node, wedges_around_node = hyperedgeball.Hyper_Ball(
+            number_of_iterations, degree_list, edgeball_around_node, directed_edgeball_around_node, triangles_around_node, wedges_around_node = hyperedgeball.Hyper_Ball(
                 number_of_nodes, b, G, Triangles, Edges=Edges, Wedges=Wedges)
         else:
-            number_of_iterations, degree_list, edgeball_around_node, directed_edgeball_around_node, triangles_around_node, nodeball_around_node, wedges_around_node = hyperedgeball_directed.Hyper_Ball(
+            number_of_iterations, degree_list, edgeball_around_node, directed_edgeball_around_node, triangles_around_node, wedges_around_node = hyperedgeball_directed.Hyper_Ball(
                 number_of_nodes, b, G, Triangles, Edges=Edges, Wedges=Wedges)
         if Save:
             pickle.dump(number_of_iterations,
